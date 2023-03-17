@@ -1,0 +1,23 @@
+type List {
+  orderId: String
+  creationDate: String
+  clientName: String
+  totalValue: Float
+  paymentNames: String
+  status: String
+  statusDescription: String
+  marketPlaceOrderId: String
+  sequence: String
+  salesChannel: String
+  affiliateId: String
+  origin: String
+  lastMessageUnread: String
+  ShippingEstimatedDate: String
+  orderIsComplete: Boolean
+  authorizedDate: String
+  callCenterOperatorName: String
+  totalItems: Float
+  currencyCode: String
+  hostname: String
+  orderFormId: String
+}

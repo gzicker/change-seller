@@ -1,0 +1,6 @@
+type MerchantTransactions {
+  id: String
+  transactionId: String
+  merchantName: String
+  payments: [Payments]
+}

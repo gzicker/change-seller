@@ -1,0 +1,12 @@
+input IChangeOrder  {
+    itemsOrder: [IItemsOrder] !
+    email: String !
+    shippingData: IShippingData !
+    paymentData: IPaymentData !
+    coments: String
+    orderId: String !
+    marketplaceOrderId: String !
+    sellerOrder: String !
+    value: Float !
+}
+

@@ -1,0 +1,17 @@
+type Query {
+  _empty: String
+  listOrders(data: IListOrders): ListOrders
+  listPayments: [Documents]
+}
+
+type Mutation {
+  simulateOrder(data: ICartSimulation): CartSimulation
+  simulateOrderLatest(data: ICartSimulation): CartSimulation
+  changeOrder(data: IChangeOrder): ChangeOrder
+  changeOrderLatest(data: IChangeOrder): ChangeOrder
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

@@ -1,0 +1,73 @@
+{
+  "graphqlPrivate1": {
+    "handler": "vtex.graphql-server@1.x/graphql",
+    "headers": {},
+    "path": "/_v/private/graphql/v1",
+    "public": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "graphqlPublic1": {
+    "handler": "vtex.graphql-server@1.x/graphql",
+    "headers": {},
+    "path": "/_v/public/graphql/v1",
+    "public": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "graphqlSegment1": {
+    "handler": "vtex.graphql-server@1.x/graphql",
+    "headers": {},
+    "path": "/_v/segment/graphql/v1",
+    "public": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "/admin/app/change-seller": {
+    "handler": "vtex.render-server/render",
+    "headers": {
+      "x-vtex-render-domain": "admin",
+      "x-vtex-render-path-id": "/admin/app/change-seller"
+    },
+    "path": "/admin/app/change-seller",
+    "public": true,
+    "rootOnly": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "/admin/app/change-seller/:p4": {
+    "handler": "vtex.render-server/render",
+    "headers": {
+      "x-vtex-render-domain": "admin",
+      "x-vtex-render-path-id": "/admin/app/change-seller/:p4"
+    },
+    "path": "/admin/app/change-seller/:p4",
+    "public": true,
+    "rootOnly": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "__graphql": {
+    "path": "/_v/graphql",
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "simulate": {
+    "path": "/simulate/",
+    "public": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "transfer": {
+    "path": "/transfer/",
+    "public": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  },
+  "vBase": {
+    "path": "/secret",
+    "public": true,
+    "version": "0.3.16",
+    "releasedAt": 1651874195911
+  }
+}

@@ -1,0 +1,5 @@
+type PriceTags {
+  name: String
+  value: Float
+  rawValue: Float
+}

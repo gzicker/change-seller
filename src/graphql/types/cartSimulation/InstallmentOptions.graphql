@@ -1,0 +1,7 @@
+type InstallmentOptions {
+  paymentSystem: String
+  paymentName: String
+  paymentGroupName: String
+  value: Float
+  installments: [Installments]
+}

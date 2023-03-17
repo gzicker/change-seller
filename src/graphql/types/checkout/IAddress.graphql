@@ -1,0 +1,5 @@
+input IAddress {
+  addressId: String
+  geoCoordinates: String
+  
+}

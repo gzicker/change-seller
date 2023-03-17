@@ -1,0 +1,67 @@
+mutation simulateOrderMutation ($data: ICartSimulation) {
+  simulateOrder(
+    data: $data){
+      items{
+        id
+        requestIndex
+        quantity
+        seller
+        sellerChain
+        tax
+        priceValidUntil
+        price
+        listPrice
+        sellingPrice
+        rewardValue
+        attachments
+        rewardValue
+        priceTags{
+          name
+          value
+          rawValue
+        }
+        availability
+        priceDefinition{
+          sellingPrices{
+            value
+            quantity
+          }
+          calculatedSellingPrice
+          total
+        }
+      }
+      totals {
+        id
+        name
+        value
+      }
+      messages {
+        text
+      }
+      logisticsInfo{
+        quantity
+        itemIndex
+        shipsTo
+    		slas{
+          id
+          deliveryChannel
+          name
+          tax
+          price
+          listPrice
+          shippingEstimate
+        	availableDeliveryWindows{
+            startDateUtc
+            endDateUtc
+            tax
+            price
+            listPrice
+          }
+          deliveryIds{
+            warehouseId
+          }
+      	}
+  		}
+    }
+}
+

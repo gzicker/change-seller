@@ -1,0 +1,5 @@
+type PriceDefinition {
+  calculatedSellingPrice: Float
+  total: Float
+  sellingPrices: [SellingPrices]
+}

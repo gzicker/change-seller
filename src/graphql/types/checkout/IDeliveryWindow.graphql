@@ -1,0 +1,7 @@
+input IDeliveryWindow  {
+  startDateUtc: String
+  endDateUtc: String
+  price: Float
+  listPrice: Float
+  tax: Float
+}

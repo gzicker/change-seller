@@ -1,0 +1,4 @@
+type SellingPrices {
+  value: Float
+  quantity: Int
+}

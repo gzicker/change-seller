@@ -1,0 +1,12 @@
+type Slas  {
+    id: String
+    deliveryChannel: String
+    name: String
+    deliveryIds: [DeliveryIds]
+    shippingEstimate: String
+    listPrice: Float
+    price: Float
+    tax: Float
+    transitTime: String
+    availableDeliveryWindows: [AvailableDeliveryWindows]
+}

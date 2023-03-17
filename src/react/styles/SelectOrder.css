@@ -1,0 +1,11 @@
+.pagination__wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination__buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}

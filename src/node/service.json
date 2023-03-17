@@ -1,0 +1,21 @@
+{
+  "memory": 256,
+  "ttl": 10,
+  "timeout": 10,
+  "minReplicas": 2,
+  "maxReplicas": 4,
+  "routes": {
+    "simulate": {
+      "path": "/simulate/",
+      "public": true
+    },
+    "transfer": {
+      "path": "/transfer/",
+      "public": true
+    },
+    "vBase": {
+      "path": "/secret",
+      "public": true
+    }
+  }
+}

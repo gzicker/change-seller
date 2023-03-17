@@ -1,0 +1,8 @@
+type ItemPurchaseConditions  {
+    id: String
+    seller: String
+    sellerChain: [String]
+    slas: [Slas]
+    price: Float
+    listPrice: Float
+}

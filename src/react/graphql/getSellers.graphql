@@ -1,0 +1,21 @@
+query getSellers($pagination:SellersPaginationParams) @context(provider:"vtex.sellers-graphql"){
+    sellers(
+      parameters:{
+        filters:{
+          sellerType:2
+        }
+        pagination:$pagination
+      }
+    ){
+      items{
+        value:id
+        label:name
+        deliveryPolicy
+      }
+      paging{
+        from
+        to
+        total
+      }
+    }
+}

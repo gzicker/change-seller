@@ -1,0 +1,24 @@
+type Items {
+  id: String
+  requestIndex: Int
+  quantity: Int
+  seller: String
+  sellerChain: [String]
+  tax: Float
+  priceValidUntil: String
+  price: Float
+  listPrice: Float
+  rewardValue: Float
+  sellingPrice: Float
+  priceTags: [PriceTags]
+  attachments: String
+  availability: String
+  priceDefinition: PriceDefinition
+
+}
+
+input IItems {
+  id: String
+  quantity: Int
+  attachments: String
+}

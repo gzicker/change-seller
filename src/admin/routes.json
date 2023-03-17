@@ -1,0 +1,10 @@
+{
+    "admin.app.change-order-seller": {
+      "component": "ChangeSeller",
+      "path": "/admin/app/change-seller"
+    },
+    "admin.app.change-order-detail": {
+      "component": "ChangeSellerDetail",
+      "path": "/admin/app/change-seller/:id"
+    }
+  }

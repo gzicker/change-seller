@@ -1,0 +1,6 @@
+query paymentMethods{
+  listPayments{
+    isAllowed
+    paymentSystemName
+  }
+}

@@ -1,0 +1,10 @@
+input IPriceDefinition {
+  calculatedSellingPrice: Float
+  total: Float
+  sellingPrices: [ISellingPrices]
+}
+
+input ISellingPrices {
+  value: Float
+  quantity: Int
+}

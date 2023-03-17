@@ -1,0 +1,381 @@
+type Query {
+  _empty: String
+  listOrders(data: IListOrders): ListOrders
+  listPayments: [Documents]
+}
+
+type Mutation {
+  simulateOrder(data: ICartSimulation): CartSimulation
+  simulateOrderLatest(data: ICartSimulation): CartSimulation
+  changeOrder(data: IChangeOrder): ChangeOrder
+  changeOrderLatest(data: IChangeOrder): ChangeOrder
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type AvailableDeliveryWindows {
+  startDateUtc: String
+  endDateUtc: String
+  price: Float
+  listPrice: Float
+  tax: Float
+}
+
+type CartSimulation {
+  items: [Items]
+  paymentData: PaymentData
+  postalCode: String
+  country: String
+  messages: [Messages]
+  logisticsInfo: [LogisticsInfo]
+  purchaseConditions: PurchaseConditions
+  totals: [Totals]
+  clientProfileData: ClientData
+  sellerOrder: String
+}
+
+type ClientData {
+  email: String
+}
+
+type DeliveryIds {
+  courierId: String
+  warehouseId: String
+  dockId: String
+  courierName: String
+  quantity: Int
+}
+
+type Fields {
+  id: String
+  ean: String
+  name: String
+}
+
+input ICartSimulation {
+  items: [IItems]
+  seller: String
+  postalCode: String
+  geoCoordinates: String
+  country: String
+  paymentData: String
+  clientProfileData: IClientData
+  sellerOrder: String
+}
+
+input IClientData {
+  email: String
+}
+
+type InstallmentOptions {
+  paymentSystem: String
+  paymentName: String
+  paymentGroupName: String
+  value: Float
+  installments: [Installments]
+}
+
+type Installments {
+  count: Int
+  hasInterestRate: Boolean
+  value: Float
+  total: Float
+  sellerMerchantInstallments: [SellerMerchantInstallments]
+}
+
+type ItemPurchaseConditions {
+  id: String
+  seller: String
+  sellerChain: [String]
+  slas: [Slas]
+  price: Float
+  listPrice: Float
+}
+
+type Items {
+  id: String
+  requestIndex: Int
+  quantity: Int
+  seller: String
+  sellerChain: [String]
+  tax: Float
+  priceValidUntil: String
+  price: Float
+  listPrice: Float
+  rewardValue: Float
+  sellingPrice: Float
+  priceTags: [PriceTags]
+  attachments: String
+  availability: String
+  priceDefinition: PriceDefinition
+}
+
+input IItems {
+  id: String
+  quantity: Int
+  attachments: String
+}
+
+type LogisticsInfo {
+  itemIndex: Int
+  quantity: Int
+  slas: [Slas]
+  shipsTo: [String]
+}
+
+type Messages {
+  text: String
+  status: String
+  fields: Fields
+}
+
+type PaymentData {
+  installmentOptions: [InstallmentOptions]
+  paymentSystems: [PaymentSystems]
+}
+
+type PaymentSystems {
+  id: Int
+  name: String
+  groupName: String
+  stringId: String
+  template: String
+  requiresDocument: Boolean
+  isCustom: Boolean
+  description: String
+  requiresAuthentication: Boolean
+}
+
+type PriceDefinition {
+  calculatedSellingPrice: Float
+  total: Float
+  sellingPrices: [SellingPrices]
+}
+
+type PriceTags {
+  name: String
+  value: Float
+  rawValue: Float
+}
+
+type PurchaseConditions {
+  itemPurchaseConditions: [ItemPurchaseConditions]
+}
+
+type SellerMerchantInstallments {
+  id: String
+  count: Int
+  hasInterestRate: Boolean
+  interestRate: Float
+  value: Float
+  total: Float
+}
+
+type SellingPrices {
+  value: Float
+  quantity: Int
+}
+
+type Slas {
+  id: String
+  deliveryChannel: String
+  name: String
+  deliveryIds: [DeliveryIds]
+  shippingEstimate: String
+  listPrice: Float
+  price: Float
+  tax: Float
+  transitTime: String
+  availableDeliveryWindows: [AvailableDeliveryWindows]
+}
+
+type Totals {
+  id: String
+  name: String
+  value: Float
+}
+
+type ChangeOrder {
+  orderForm: OrderForm
+  transactionData: TransactionData
+  orders: [Orders]
+  error: Error
+}
+
+type Error {
+  message: String
+  totalizers: [Totalizers]
+}
+
+input IAddress {
+  addressId: String
+  geoCoordinates: String
+}
+
+input IChangeOrder {
+  itemsOrder: [IItemsOrder]!
+  email: String!
+  shippingData: IShippingData!
+  paymentData: IPaymentData!
+  coments: String
+  orderId: String!
+  marketplaceOrderId: String!
+  sellerOrder: String!
+  value: Float!
+}
+
+input IDeliveryWindow {
+  startDateUtc: String
+  endDateUtc: String
+  price: Float
+  listPrice: Float
+  tax: Float
+}
+
+input IItemsOrder {
+  id: String
+  requestIndex: Int
+  quantity: Int
+  seller: String
+  sellerChain: [String]
+  tax: Float
+  priceValidUntil: String
+  price: Float
+  listPrice: Float
+  rewardValue: Float
+  sellingPrice: Float
+  priceTags: [IPriceTags]
+  attachments: String
+  availability: String
+  priceDefinition: IPriceDefinition
+}
+
+input ILogisticsInfoOrder {
+  itemIndex: Int
+  selectedSla: String
+  selectedDeliveryChannel: String
+  quantity: Int
+  price: Float
+  shipsTo: [String]
+  shippingEstimate: String
+  deliveryWindow: IDeliveryWindow
+}
+
+input IPaymentData {
+  payments: [IPayments]
+}
+
+input IPayments {
+  paymentSystem: String
+  referenceValue: Float
+  value: Float
+  installments: Int
+}
+
+input IPriceDefinition {
+  calculatedSellingPrice: Float
+  total: Float
+  sellingPrices: [ISellingPrices]
+}
+
+input ISellingPrices {
+  value: Float
+  quantity: Int
+}
+
+input IPriceTags {
+  name: String
+  value: Float
+  rawValue: Float
+}
+
+input IShippingData {
+  address: IAddress
+  logisticsInfoOrder: [ILogisticsInfoOrder]
+}
+
+type MerchantTransactions {
+  id: String
+  transactionId: String
+  merchantName: String
+  payments: [Payments]
+}
+
+type OrderForm {
+  orderFormId: String
+  messages: [Messages]
+  orders: [Orders]
+}
+
+type Orders {
+  orderId: String
+  orderGroup: String
+  sellerOrderId: String
+}
+
+type Payments {
+  paymentSystem: String
+  value: Float
+}
+
+type Totalizers {
+  id: String
+  name: String
+  value: Float
+}
+
+type TransactionData {
+  merchantTransactions: [MerchantTransactions]
+  receiverUri: String
+  gatewayCallbackTemplatePath: String
+}
+
+type Documents {
+  isAllowed: Boolean
+  paymentSystemName: String
+}
+
+input IListOrders {
+  email: String
+  per_page: Float
+  page: Float
+}
+
+type List {
+  orderId: String
+  creationDate: String
+  clientName: String
+  totalValue: Float
+  paymentNames: String
+  status: String
+  statusDescription: String
+  marketPlaceOrderId: String
+  sequence: String
+  salesChannel: String
+  affiliateId: String
+  origin: String
+  lastMessageUnread: String
+  ShippingEstimatedDate: String
+  orderIsComplete: Boolean
+  authorizedDate: String
+  callCenterOperatorName: String
+  totalItems: Float
+  currencyCode: String
+  hostname: String
+  orderFormId: String
+}
+
+type ListOrders {
+  list: [List]
+  paging: Paging
+}
+
+type Paging {
+  total: Int
+  pages: Int
+  currentPage: Int
+  perPage: Int
+}

@@ -1,0 +1,6 @@
+input IPayments  {
+    paymentSystem: String
+    referenceValue: Float
+    value: Float
+    installments: Int 
+}

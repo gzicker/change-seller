@@ -1,0 +1,17 @@
+input IItemsOrder {
+  id: String
+  requestIndex: Int
+  quantity: Int
+  seller: String
+  sellerChain: [String]
+  tax: Float
+  priceValidUntil: String
+  price: Float
+  listPrice: Float
+  rewardValue: Float
+  sellingPrice: Float
+  priceTags: [IPriceTags]
+  attachments: String
+  availability: String
+  priceDefinition: IPriceDefinition
+}

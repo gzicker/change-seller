@@ -1,0 +1,5 @@
+type OrderForm {
+    orderFormId: String
+    messages: [Messages]
+    orders: [Orders]
+}

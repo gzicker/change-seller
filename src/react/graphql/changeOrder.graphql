@@ -1,0 +1,33 @@
+mutation changeOrderSeller ($data:IChangeOrder) {
+  changeOrder(
+    data: $data
+    ){
+      orderForm{
+    	orderFormId
+        messages{
+          text
+          status
+          fields{
+            id
+            ean
+            name
+          }
+        }
+  	  }
+      orders{
+        orderId
+        orderGroup
+        sellerOrderId
+      }
+      transactionData{
+        receiverUri
+      }
+      error{
+        message
+        totalizers{
+          id
+          value
+        }
+      }
+    }
+}

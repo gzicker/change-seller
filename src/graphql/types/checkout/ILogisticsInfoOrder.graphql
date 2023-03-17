@@ -1,0 +1,10 @@
+input ILogisticsInfoOrder {
+  itemIndex: Int
+  selectedSla: String
+  selectedDeliveryChannel: String
+  quantity: Int
+  price: Float
+  shipsTo: [ String ]
+  shippingEstimate: String
+  deliveryWindow: IDeliveryWindow
+}

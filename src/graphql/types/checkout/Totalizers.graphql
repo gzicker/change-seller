@@ -1,0 +1,5 @@
+type Totalizers {
+   id: String
+   name: String
+   value: Float
+}

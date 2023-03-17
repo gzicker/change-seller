@@ -1,0 +1,23 @@
+export interface Orders{
+    list:any[],
+    items:any[],
+    paymentData:{
+        transactions:[
+            {
+                payments:[
+                    {
+                        paymentSystemName:string
+                        paymentSystem:string
+                    }
+                ]
+            }
+        ]
+    },
+    storePreferencesData:{
+      countryCode:string
+    },
+    clientProfileData:{
+      email:string
+    },
+    merchantName:string,
+}

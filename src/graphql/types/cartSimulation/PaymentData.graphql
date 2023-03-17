@@ -1,0 +1,5 @@
+type PaymentData {
+    installmentOptions: [InstallmentOptions]
+    paymentSystems: [PaymentSystems]
+  }
+

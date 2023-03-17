@@ -1,0 +1,6 @@
+type Paging {
+  total: Int
+  pages: Int
+  currentPage: Int
+  perPage: Int
+}

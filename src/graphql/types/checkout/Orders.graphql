@@ -1,0 +1,5 @@
+type Orders {
+    orderId: String
+    orderGroup: String
+    sellerOrderId: String
+}

@@ -1,0 +1,5 @@
+type Totals  {
+    id: String
+    name: String
+    value: Float
+}

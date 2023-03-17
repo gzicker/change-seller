@@ -1,0 +1,12 @@
+type PaymentSystems  {
+    id: Int
+    name: String
+    groupName: String
+    stringId: String
+    template: String
+    requiresDocument: Boolean
+    isCustom: Boolean
+    description: String
+    requiresAuthentication: Boolean
+  
+}

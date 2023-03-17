@@ -1,0 +1,5 @@
+type Payments {
+  paymentSystem: String
+  value: Float
+
+}

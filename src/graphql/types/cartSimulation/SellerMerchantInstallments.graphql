@@ -1,0 +1,8 @@
+type SellerMerchantInstallments  {
+    id: String
+    count: Int
+    hasInterestRate: Boolean
+    interestRate: Float
+    value: Float
+    total: Float
+}

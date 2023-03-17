@@ -1,0 +1,4 @@
+input IShippingData {
+  address: IAddress
+  logisticsInfoOrder: [ILogisticsInfoOrder]
+}

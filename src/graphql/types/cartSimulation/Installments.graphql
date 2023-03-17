@@ -1,0 +1,7 @@
+type Installments {
+  count: Int
+  hasInterestRate: Boolean
+  value: Float
+  total: Float
+  sellerMerchantInstallments: [SellerMerchantInstallments]
+}

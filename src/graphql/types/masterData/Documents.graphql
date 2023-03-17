@@ -1,0 +1,4 @@
+type Documents {
+  isAllowed: Boolean
+  paymentSystemName: String
+  }

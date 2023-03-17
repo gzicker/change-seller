@@ -1,0 +1,7 @@
+type LogisticsInfo  {
+    itemIndex: Int
+    quantity: Int
+    slas: [Slas]
+    shipsTo: [String]
+
+}

@@ -1,0 +1,1 @@
+{"memory":256,"routes":{"__graphql":{"path":"/_v/graphql","version":"0.4.0","releasedAt":1637239548610},"simulate":{"path":"/simulate/","public":true},"transfer":{"path":"/transfer/","public":true},"vBase":{"path":"/secret","public":true}},"timeout":10,"ttl":10,"minReplicas":2,"maxReplicas":4,"runtimeArgs":["--max_old_space_size=204"]}

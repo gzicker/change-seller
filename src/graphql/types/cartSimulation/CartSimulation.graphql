@@ -1,0 +1,12 @@
+type CartSimulation {
+  items: [Items]
+  paymentData: PaymentData
+  postalCode: String
+  country: String
+  messages: [Messages]
+  logisticsInfo: [LogisticsInfo]
+  purchaseConditions: PurchaseConditions
+  totals: [Totals]
+  clientProfileData:ClientData
+  sellerOrder:String
+}

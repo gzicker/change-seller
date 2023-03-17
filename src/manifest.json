@@ -1,0 +1,122 @@
+{
+  "vendor": "aberaldob2b",
+  "name": "change-seller",
+  "version": "0.7.4",
+  "title": "Change seller",
+  "description": "this admin custom module allow change one order from one seller to other",
+  "builders": {
+    "react": "3.x",
+    "admin": "0.x",
+    "messages": "1.x",
+    "docs": "0.x",
+    "node": "6.x",
+    "graphql": "1.x",
+    "store": "0.x"
+  },
+  "dependencies": {
+    "vtex.store-graphql": "2.x",
+    "vtex.styleguide": "9.x",
+    "vtex.catalog-graphql": "1.x",
+    "vtex.search-resolver": "1.x",
+    "vtex.search-graphql": "0.x",
+    "vtex.render-runtime": "8.x",
+    "vtex.sellers-graphql": "8.x",
+    "vtex.my-cards-graphql": "2.x",
+    "vtex.css-handles": "0.x",
+    "vtex.session-client": "1.x",
+    "vtex.apps-graphql": "2.x"
+  },
+  "billingOptions": {
+    "type": "free"
+  },
+  "registries": [
+    "smartcheckout"
+  ],
+  "policies": [
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "colossus-write-logs"
+    },
+    {
+      "name": "vbase-read-write"
+    },
+    {
+      "name": "graphql-query"
+    },
+    {
+      "name": "vtex.store-graphql:resolve-graphql"
+    },
+    {
+      "name": "POWER_USER_DS"
+    },
+    {
+      "name": "ADMIN_DS"
+    },
+    {
+      "name": "OMSViewer"
+    },
+    {
+      "name": "Get_User_By_Identifier"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/vlm/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/oms/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/checkout/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/dataentities/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "*",
+        "path": "/api/catalog_system/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "conversationtracker.vtex.com.br",
+        "path": "/api/pvt/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "*.vtexpayments.com.br",
+        "path": "/api/pvt/transactions/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "myvtex.com",
+        "path": "/_v/graphql/private/v1"
+      }
+    }
+  ],
+  "credentialType": "absolute",
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

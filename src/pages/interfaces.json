@@ -1,0 +1,10 @@
+{
+  "admin.app.change-order-seller": {
+    "component": "ChangeSeller",
+    "render": "client"
+  },
+  "admin.app.change-order-detail": {
+    "component": "ChangeSellerDetail",
+    "render": "client"
+  }
+}

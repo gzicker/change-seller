@@ -1,0 +1,10 @@
+input ICartSimulation {
+    items: [IItems]
+    seller: String
+    postalCode: String
+    geoCoordinates: String
+    country: String
+    paymentData: String
+    clientProfileData: IClientData
+    sellerOrder:String
+  }

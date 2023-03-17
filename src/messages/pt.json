@@ -1,0 +1,22 @@
+{
+  "change-seller.navigation.label-group": "Admin de exemplo",
+  "change-seller.navigation.label-table": "Exemplo de tabela",
+  "change-seller.navigation.search.kws": "teste, mock, fake",
+  "change-seller.navigation.details.search.kws": "detalhe, mock, test, oi",
+  "change-seller.navigation.table.search.kws": "tabela, mock, test, tchau",
+  "change-seller.hello-world": "Admin de exemplo",
+  "change-seller.details": "Admin detalhes",
+  "change-seller.general-data.payment-method-disallowed": "The payment method doesn't allow the order transferation",
+  "change-seller.general-data.title-1": "User data",
+  "change-seller.general-data.t1-item-1": "Name",
+  "change-seller.general-data.t1-item-2": "Phone number",
+  "change-seller.general-data.title-2": "Allowed payment methods",
+  "change-seller.general-data.t2-item-1": "Next are the allowed payment methods",
+  "change-seller.general-data.t2-item-2": "Order Id:",
+  "change-seller.general-data.t2-item-3": "Order payment method:",
+  "change-seller.general-data.t2-item-3.1": "Order payment group:",
+  "change-seller.order-details-buttons.go-back": "Go back",
+  "change-seller.order-details-buttons.order-simulation": "Order simulation",
+  "change-seller.order-details-buttons.primary-action-1": "Order simulation",
+  "change-seller.order-details-buttons.primary-action-2": "Transfer order"
+}

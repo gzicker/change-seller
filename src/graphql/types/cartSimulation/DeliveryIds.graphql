@@ -1,0 +1,7 @@
+type DeliveryIds  {
+    courierId: String
+    warehouseId: String
+    dockId: String
+    courierName: String
+    quantity: Int
+}

@@ -1,0 +1,381 @@
+type Query {
+  olimpica_changeseller_0_7_4__empty: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listOrders(data: olimpica_changeseller_0_7_4_IListOrders @from(app: "olimpica.change-seller@0.7.4")): olimpica_changeseller_0_7_4_ListOrders @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listPayments: [olimpica_changeseller_0_7_4_Documents] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type Mutation {
+  olimpica_changeseller_0_7_4_simulateOrder(data: olimpica_changeseller_0_7_4_ICartSimulation @from(app: "olimpica.change-seller@0.7.4")): olimpica_changeseller_0_7_4_CartSimulation @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_simulateOrderLatest(data: olimpica_changeseller_0_7_4_ICartSimulation @from(app: "olimpica.change-seller@0.7.4")): olimpica_changeseller_0_7_4_CartSimulation @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_changeOrder(data: olimpica_changeseller_0_7_4_IChangeOrder @from(app: "olimpica.change-seller@0.7.4")): olimpica_changeseller_0_7_4_ChangeOrder @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_changeOrderLatest(data: olimpica_changeseller_0_7_4_IChangeOrder @from(app: "olimpica.change-seller@0.7.4")): olimpica_changeseller_0_7_4_ChangeOrder @from(app: "olimpica.change-seller@0.7.4")
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type olimpica_changeseller_0_7_4_AvailableDeliveryWindows @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_startDateUtc: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_endDateUtc: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_price: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_tax: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_CartSimulation @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_items: [olimpica_changeseller_0_7_4_Items] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentData: olimpica_changeseller_0_7_4_PaymentData @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_postalCode: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_country: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_messages: [olimpica_changeseller_0_7_4_Messages] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_logisticsInfo: [olimpica_changeseller_0_7_4_LogisticsInfo] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_purchaseConditions: olimpica_changeseller_0_7_4_PurchaseConditions @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_totals: [olimpica_changeseller_0_7_4_Totals] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_clientProfileData: olimpica_changeseller_0_7_4_ClientData @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerOrder: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_ClientData @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_email: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_DeliveryIds @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_courierId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_warehouseId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_dockId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_courierName: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Fields @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_ean: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_name: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_ICartSimulation @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_items: [olimpica_changeseller_0_7_4_IItems] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_seller: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_postalCode: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_geoCoordinates: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_country: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentData: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_clientProfileData: olimpica_changeseller_0_7_4_IClientData @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerOrder: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IClientData @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_email: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_InstallmentOptions @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_paymentSystem: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentName: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentGroupName: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_installments: [olimpica_changeseller_0_7_4_Installments] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Installments @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_count: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_hasInterestRate: Boolean @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_total: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerMerchantInstallments: [olimpica_changeseller_0_7_4_SellerMerchantInstallments] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_ItemPurchaseConditions @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_seller: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerChain: [String] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_slas: [olimpica_changeseller_0_7_4_Slas] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_price: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Items @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_requestIndex: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_seller: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerChain: [String] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_tax: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_priceValidUntil: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_price: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_rewardValue: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellingPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_priceTags: [olimpica_changeseller_0_7_4_PriceTags] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_attachments: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_availability: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_priceDefinition: olimpica_changeseller_0_7_4_PriceDefinition @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IItems @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_attachments: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_LogisticsInfo @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_itemIndex: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_slas: [olimpica_changeseller_0_7_4_Slas] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_shipsTo: [String] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Messages @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_text: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_status: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_fields: olimpica_changeseller_0_7_4_Fields @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_PaymentData @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_installmentOptions: [olimpica_changeseller_0_7_4_InstallmentOptions] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentSystems: [olimpica_changeseller_0_7_4_PaymentSystems] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_PaymentSystems @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_name: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_groupName: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_stringId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_template: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_requiresDocument: Boolean @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_isCustom: Boolean @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_description: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_requiresAuthentication: Boolean @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_PriceDefinition @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_calculatedSellingPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_total: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellingPrices: [olimpica_changeseller_0_7_4_SellingPrices] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_PriceTags @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_name: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_rawValue: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_PurchaseConditions @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_itemPurchaseConditions: [olimpica_changeseller_0_7_4_ItemPurchaseConditions] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_SellerMerchantInstallments @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_count: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_hasInterestRate: Boolean @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_interestRate: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_total: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_SellingPrices @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Slas @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_deliveryChannel: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_name: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_deliveryIds: [olimpica_changeseller_0_7_4_DeliveryIds] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_shippingEstimate: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_price: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_tax: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_transitTime: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_availableDeliveryWindows: [olimpica_changeseller_0_7_4_AvailableDeliveryWindows] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Totals @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_name: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_ChangeOrder @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_orderForm: olimpica_changeseller_0_7_4_OrderForm @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_transactionData: olimpica_changeseller_0_7_4_TransactionData @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_orders: [olimpica_changeseller_0_7_4_Orders] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_error: olimpica_changeseller_0_7_4_Error @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Error @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_message: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_totalizers: [olimpica_changeseller_0_7_4_Totalizers] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IAddress @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_addressId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_geoCoordinates: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IChangeOrder @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_itemsOrder: [olimpica_changeseller_0_7_4_IItemsOrder]! @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_email: String! @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_shippingData: olimpica_changeseller_0_7_4_IShippingData! @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentData: olimpica_changeseller_0_7_4_IPaymentData! @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_coments: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_orderId: String! @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_marketplaceOrderId: String! @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerOrder: String! @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float! @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IDeliveryWindow @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_startDateUtc: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_endDateUtc: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_price: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_tax: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IItemsOrder @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_requestIndex: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_seller: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerChain: [String] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_tax: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_priceValidUntil: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_price: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_listPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_rewardValue: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellingPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_priceTags: [olimpica_changeseller_0_7_4_IPriceTags] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_attachments: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_availability: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_priceDefinition: olimpica_changeseller_0_7_4_IPriceDefinition @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_ILogisticsInfoOrder @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_itemIndex: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_selectedSla: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_selectedDeliveryChannel: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_price: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_shipsTo: [String] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_shippingEstimate: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_deliveryWindow: olimpica_changeseller_0_7_4_IDeliveryWindow @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IPaymentData @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_payments: [olimpica_changeseller_0_7_4_IPayments] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IPayments @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_paymentSystem: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_referenceValue: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_installments: Int @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IPriceDefinition @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_calculatedSellingPrice: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_total: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellingPrices: [olimpica_changeseller_0_7_4_ISellingPrices] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_ISellingPrices @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_quantity: Int @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IPriceTags @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_name: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_rawValue: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IShippingData @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_address: olimpica_changeseller_0_7_4_IAddress @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_logisticsInfoOrder: [olimpica_changeseller_0_7_4_ILogisticsInfoOrder] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_MerchantTransactions @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_transactionId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_merchantName: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_payments: [olimpica_changeseller_0_7_4_Payments] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_OrderForm @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_orderFormId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_messages: [olimpica_changeseller_0_7_4_Messages] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_orders: [olimpica_changeseller_0_7_4_Orders] @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Orders @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_orderId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_orderGroup: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sellerOrderId: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Payments @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_paymentSystem: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Totalizers @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_id: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_name: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_value: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_TransactionData @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_merchantTransactions: [olimpica_changeseller_0_7_4_MerchantTransactions] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_receiverUri: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_gatewayCallbackTemplatePath: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Documents @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_isAllowed: Boolean @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentSystemName: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+input olimpica_changeseller_0_7_4_IListOrders @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_email: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_per_page: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_page: Float @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_List @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_orderId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_creationDate: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_clientName: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_totalValue: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paymentNames: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_status: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_statusDescription: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_marketPlaceOrderId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_sequence: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_salesChannel: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_affiliateId: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_origin: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_lastMessageUnread: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_ShippingEstimatedDate: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_orderIsComplete: Boolean @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_authorizedDate: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_callCenterOperatorName: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_totalItems: Float @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_currencyCode: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_hostname: String @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_orderFormId: String @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_ListOrders @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_list: [olimpica_changeseller_0_7_4_List] @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_paging: olimpica_changeseller_0_7_4_Paging @from(app: "olimpica.change-seller@0.7.4")
+}
+
+type olimpica_changeseller_0_7_4_Paging @from(app: "olimpica.change-seller@0.7.4") {
+  olimpica_changeseller_0_7_4_total: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_pages: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_currentPage: Int @from(app: "olimpica.change-seller@0.7.4")
+  olimpica_changeseller_0_7_4_perPage: Int @from(app: "olimpica.change-seller@0.7.4")
+}

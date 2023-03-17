@@ -1,0 +1,5 @@
+input IListOrders {
+  email: String
+  per_page: Float
+  page: Float
+}

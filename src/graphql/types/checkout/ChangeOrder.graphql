@@ -1,0 +1,6 @@
+type ChangeOrder {
+  orderForm: OrderForm
+  transactionData: TransactionData
+  orders: [Orders]
+  error: Error
+}
